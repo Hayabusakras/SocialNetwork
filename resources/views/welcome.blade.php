@@ -25,7 +25,8 @@
         </div>
         <div class="col-md-6">
             <h3>Sign In</h3>
-            <form action="#" method="POST">
+            <form action="{{ route('signin') }}" method="POST">
+                {{csrf_field()}}
                 <div class="form-group">
                     <label for="email">Your email</label>
                     <input type="text" class="form-control" name="email" id="email">
