@@ -19,7 +19,7 @@ Route::group(['middleware'=>['web']], function() {
     Route::post('signup', 'UserController@postSignUp')->name('signup');
     Route::post('signin', 'UserController@postSignIn')->name('signin');
     Route::get('/dashboard', [
-        'uses' => 'UserController@getDashboard',
+        'uses' => 'PostController@getDashboard',
         'as' => 'dashboard',
         'middleware' => 'auth'
     ]);
