@@ -20,10 +20,10 @@
             </form>
         </div>
     </section>
-    @if(Storage::disk('local')->has($user->first_name . '_' . $user->id . '.jpg'))
+    @if(Storage::disk('local')->has($user->first_name . '-' . $user->id . '.jpg'))
         <section class="row new-post">
             <div class="col-md-6 col-md-offset-3">
-                <img src="{{ route('account.image', ['filename' => $user->first_name . '_' . $user->id . '.jpg']) }}" alt="" class="img-responsive">
+                <img src="{{ route('account.image', ['filename' => $user->first_name . '-' . $user->id . '.jpg']) }}" alt="" class="img-responsive">
             </div>
         </section>
     @endif
