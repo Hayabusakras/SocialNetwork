@@ -12,7 +12,7 @@
 */
 
 
-Route::group(['middleware'=>['web']], function() {
+
     Route::get('/', function () {
         return view('welcome');
     })->name('home');
@@ -40,4 +40,4 @@ Route::group(['middleware'=>['web']], function() {
         'uses' => 'PostController@postEditPost',
         'as' => 'edit'
     ]);
-});
+
