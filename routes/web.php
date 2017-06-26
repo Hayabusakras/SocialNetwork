@@ -12,7 +12,7 @@
 */
 
 
-
+Route::group(['middleware'=>['web']], function() {
     Route::get('/', function () {
         return view('welcome');
     })->name('home');
@@ -36,8 +36,16 @@
             'uses' => 'UserController@getLogout',
             'as' => 'logout'
         ]);
+    Route::get('/account', [
+       'uses' => 'UserController@getAccount',
+        'as' => 'account'
+    ]);
+    Route::post('/updateaccount', [
+        'uses' => 'UserController@postSaveAccount',
+        'as' => 'account.save'
+    ]);
     Route::post('/edit', [
         'uses' => 'PostController@postEditPost',
         'as' => 'edit'
     ]);
-
+});
